@@ -3,28 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regalo para Mamá</title>
+    <title>Para mi Mamá ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(circle, #850038 0%, #000000 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+        .container {
+            background-color: #12161d;
+            padding: 40px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 400px;
+            width: 90%;
+        }
+        .flowers {
+            width: 250px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #ff2d75;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+        .btn {
+            display: block;
+            background: #ff0055;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            margin: 10px auto;
+            border-radius: 50px;
+            border: none;
+            width: 80%;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+        /* Estilo para la imagen de la sorpresa */
+        #miSorpresa {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #miSorpresa img {
+            max-width: 90%;
+            max-height: 70vh;
+            border-radius: 15px;
+            border: 5px solid white;
+            object-fit: contain;
+        }
+    </style>
 </head>
-<body style="background-color: #ffe6f2; text-align: center; font-family: Arial, sans-serif; margin: 0; padding: 20px;">
+<body>
 
-    <div style="background: white; padding: 20px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 500px; margin: auto;">
-        <h1 style="color: #ff0055;">¡Feliz Día, Mamá! ❤️</h1>
+    <div class="container">
+        <!-- Usamos el nombre de tu archivo de flores -->
+        <img src="Flores.png" class="flowers" alt="Flores">
+        
+        <h1>¡Feliz Día de las Madres! ❤️</h1>
         <p>Gracias por estar conmigo siempre, especialmente por tu apoyo en estos momentos de salud. Te amo mucho.</p>
         
-        <button onclick="mostrarSorpresa()" style="background: #ff0055; color: white; border: none; padding: 15px 30px; border-radius: 25px; cursor: pointer; font-size: 16px;">
-            Presiona aquí 🌸
-        </button>
+        <button class="btn" onclick="mostrarAlerta()">Mira tu primera Sorpresa</button>
+        <button class="btn" onclick="mostrarFoto()">Mira tu segunda Sorpresa</button>
+    </div>
+
+    <!-- Contenedor oculto para la foto -->
+    <div id="miSorpresa">
+        <img src="sorpresa2.png" alt="Sorpresa">
+        <button class="btn" style="margin-top: 20px; width: 150px;" onclick="cerrarFoto()">Cerrar ❤️</button>
     </div>
 
     <script>
-    function mostrarSorpresa() {
-      alert(
-        "¡Hola, mamita linda! ❤️\n\n" +
-        "Hoy no es un día cualquiera. Quería agradecerte desde el fondo de mi corazón por no soltarme nunca.\n\n" +
-        "Gracias por ser mi apoyo incondicional, especialmente en estos momentos de salud. Tu fuerza y tus cuidados me dan el ánimo para seguir adelante todos los días.\n\n" +
-        "¡Te amo con todo mi ser! ✨"
-      );
-    }
+        function mostrarAlerta() {
+            alert(
+                "¡Hola, mamita linda! ❤️\n\n" +
+                "Hoy no es un día cualquiera. Quería agradecerte desde el fondo de mi corazón por no soltarme nunca.\n\n" +
+                "Gracias por ser mi apoyo incondicional, especialmente en estos momentos de salud. Tu fuerza y tus cuidados me dan el ánimo para seguir adelante todos los días.\n\n" +
+                "¡Te amo con todo mi ser! ✨"
+            );
+        }
+
+        function mostrarFoto() {
+            document.getElementById('miSorpresa').style.display = 'flex';
+        }
+
+        function cerrarFoto() {
+            document.getElementById('miSorpresa').style.display = 'none';
+        }
     </script>
 </body>
 </html>
